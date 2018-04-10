@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+class Main extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            generation: 0,
+        }
+    }
+
+
+    render() {
+        return (
+            <div>
+                <h1>The game of life</h1>
+                <Grid
+                />
+                <h2>Generations: {this.state.generation}</h2>
+            </div>
+        )
+    }
+
+}
+
+ReactDOM.render(<Main />, document.getElementById('root'));
